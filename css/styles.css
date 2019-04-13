@@ -1,0 +1,235 @@
+body{
+   
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    overflow: hidden;
+    animation: animatecontainer 1000ms ease-in-out 650ms forwards;
+}
+
+@keyframes animatecontainer{
+0%{
+    opacity: 0;
+    
+}
+100%{
+    opacity:1;
+    
+}
+}
+.overlay{
+    position: absolute;
+    z-index:2;
+    background-color: black;
+
+    width:100%;
+    height: 100%;
+    animation: overlaydiv 1000ms ease-in-out 800ms forwards ;
+}
+
+.overlay h1{
+    color:white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    letter-spacing: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+@keyframes overlaydiv{
+    0%{
+        transform: translateY(0%);
+    }
+
+    100%{
+        transform: translateY(-100%);
+    }
+}
+.navigationbar{
+    width: 100%;
+    display: flex;
+    background-color: rgba(0, 0, 0, .5);
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    animation: animatemenu 1000ms ease-in-out forwards;
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+    animation: animatemenu 1000ms ease-in-out 1500ms forwards;
+
+}
+
+.pagename{
+    display: flex;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    font-weight: bold;
+    margin-left:15px ;
+    justify-content: space-between;
+    
+}
+
+.pagename #menu-icon{
+    display: none;
+}
+
+.tw{
+    color: red;
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.list-of-bar{
+    display: flex;
+    list-style-type: none;
+    font-size: 1.2rem;
+    margin: 0 15px 0 0;
+}
+
+.list-of-bar li{
+padding: 15px;
+display: flex; 
+}
+
+.navigationbar .list-of-bar li:hover{
+    background-color: red;
+}
+
+@media screen and (max-width:653px)
+{
+    
+    .navigationbar{
+        display: block;     
+        text-align: center;
+    }
+    
+.pagename .lostworld{
+ padding:20px 20px 0px 0px;
+}
+
+.pagename #menu-icon{ 
+    display: block;
+}
+    .list-of-bar{
+        display:none;
+        
+    }
+
+    .list-of-bar li{
+        justify-content: space-around;
+        animation: animatemenu 1000ms ease-in-out 1500ms forwards;
+    }
+}
+
+
+@keyframes animatemenu{
+    0%{
+        opacity: 0;
+        transform: translatey(-100px); 
+    }
+
+    100%{
+        opacity: 1;
+        transform: translatey(0px);
+    }
+}
+
+.slider{
+    position: relative;
+    overflow: hidden;   
+    width: 100vw;
+    height: 100vh; 
+}
+
+ .slide{    
+   position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left:0;
+    transition: opacity  0.5s ease-in-out;
+
+}
+
+.slide.main{
+    opacity: 1;
+
+}
+
+
+.slide:nth-child(1){
+    background: url("./wallpaper/mantas-hesthaven-135478-unsplash.jpg") no-repeat center/cover  ;
+  
+
+}
+
+.slide:nth-child(2){
+    background: url("./wallpaper/swaraj-tiwari-125707-unsplash.jpg") no-repeat center/cover;
+}
+
+.slide:nth-child(3){
+    background: url("./wallpaper/eric-ward-304333-unsplash.jpg") no-repeat center/cover;
+}
+
+.slide:nth-child(4){
+    background: url("./wallpaper/jamie-street-92254-unsplash.jpg") no-repeat center/cover;
+}
+
+.slide:nth-child(5){
+    background: url("./wallpaper/thomas-griesbeck-149810-unsplash.jpg") no-repeat center/cover;
+}
+
+.slide:nth-child(6){
+    background: url("./wallpaper/simon-migaj-421505-unsplash.jpg")no-repeat center/cover;
+}
+
+
+.content{
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: rgba(255 , 255,255, 0.5);
+    padding:5px;
+   
+    width:400px;
+    height:100px;
+}
+
+.content p{
+    font-size:1.3rem;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 
+}
+
+.left , .right{
+    position: absolute;
+    top:50%;
+    cursor: pointer;
+    font-size: 50px;
+
+}
+
+.left{
+left: 20px;
+}
+
+.right{
+    right:20px;
+}
+
+button:hover{
+color:red;
+}
